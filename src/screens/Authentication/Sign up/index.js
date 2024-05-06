@@ -14,7 +14,7 @@ import {Color, Colors} from '../../../themes/colors';
 import Custom_Input from '../../../components/custom_input';
 import Custom_btn from '../../../components/custom_btn';
 
-const Login = ({navigation}) => {
+const Signup = ({navigation}) => {
 
   const [userEmail, setuserEmail] = useState('');
   const [password, setpassword] = useState('');
@@ -29,7 +29,7 @@ const Login = ({navigation}) => {
     <ScrollView>
       <Text style={styles.ml_text}>MILK SURE</Text>
       <Text style={styles.wlcm_txt}>Welcome Back!</Text>
-      <Text style={styles.signIn_txt}>Sign in to your account</Text>
+      <Text style={styles.signIn_txt}>Sign up to your account</Text>
 
       <Custom_Input
         value={userEmail}
@@ -50,6 +50,26 @@ const Login = ({navigation}) => {
         rightImage={msg_icon}
       />
 
+      <Custom_Input
+        value={password}
+        onChangeText={txt => {
+          setpassword(txt);
+        }}
+        placeholder="Enter password"
+        leftImage={msg_icon}
+        rightImage={msg_icon}
+      />
+
+      <Custom_Input
+        value={password}
+        onChangeText={txt => {
+          setpassword(txt);
+        }}
+        placeholder="Enter password"
+        leftImage={msg_icon}
+        rightImage={msg_icon}
+      />
+
       <View style={styles.check_view}>
         <TouchableOpacity onPress={CheckPassword}>
           {checked ? (
@@ -58,9 +78,9 @@ const Login = ({navigation}) => {
             <Image source={remember_tick} style={styles.box_icon} />
           )}
         </TouchableOpacity>
-        <Text style={styles.rm_text}>Remember me</Text>
+        <Text style={styles.rm_text}>I Agree to the Bobi's</Text>
         <TouchableOpacity>
-          <Text style={styles.fp_text}>Forgot Password</Text>
+          <Text style={styles.fp_text}>Term & Conditions</Text>
         </TouchableOpacity>
       </View>
       <Custom_btn title="sign In" 
@@ -74,7 +94,7 @@ const Login = ({navigation}) => {
       </TouchableOpacity>
       </View>
       <TouchableOpacity>
-      <Text style={styles.guest_txt}>continue as guest</Text>
+      <Text style={styles.guest_txt}>Already have an account?</Text>
       </TouchableOpacity>
       </ScrollView>
     </View>
@@ -92,11 +112,11 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.R_Black,
     color: 'black',
     fontSize: 36,
-    paddingTop: 98,
+    paddingTop: 78,
   },
   wlcm_txt: {
     alignSelf: 'center',
-    paddingTop: 70,
+    paddingTop: 50,
     fontFamily: Fonts.R_Bold,
     color: 'red',
     fontSize: 22,
@@ -155,11 +175,9 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.SF_Bold,
   },
   fp_text: {
-    color: Color.BLACK,
-    paddingHorizontal: 5,
+    color: Color.primary,
     fontSize: 14,
     fontFamily: Fonts.SF_Bold,
-    paddingLeft: 100,
   },
   no_acc_txt:{
     color: Color.grey2,
@@ -192,4 +210,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Login;
+export default Signup;
