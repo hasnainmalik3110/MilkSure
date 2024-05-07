@@ -6,7 +6,7 @@ import { styles } from './style'
 const Splash=({navigation})=>{
   setTimeout(() => {
   
-    navigation.navigate('LoginScreen');
+    navigation.navigate('Sign_upScreen');
 }, 2000);
   return (
     <View style={styles.container}>
@@ -15,7 +15,6 @@ const Splash=({navigation})=>{
     />
     <Text style={styles.ml_txt}>MILK SURE</Text>
     <Text style={styles.adlt_txt}>MILK ADULTRATION DETECTION</Text>
-     
     </View>
   )
 }

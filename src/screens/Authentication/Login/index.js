@@ -64,7 +64,7 @@ const Login = ({navigation}) => {
         </TouchableOpacity>
       </View>
       <Custom_btn title="sign In" 
-      ONPress={()=>navigation.navigate('Sign_upScreen')}
+      ONPress={()=>navigation.navigate('HomeScreen')}
       />
 
       <View style={styles.reg_view}>

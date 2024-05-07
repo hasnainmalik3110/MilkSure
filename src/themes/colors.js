@@ -4,6 +4,7 @@ export const Color={
     grey1: '#9E9E9E',
     white_b: '#F5F5F5',
     grey2: '#5B5B5B',
-    bg_clr: '#f5f5f5'
+    bg_clr: '#f5f5f5',
+    WHITE: '#ffffff'
     
 }
