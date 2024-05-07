@@ -7,8 +7,6 @@ const Home = () => {
   return (
     <View style={{flex:1, backgroundColor:Color.white_b}}>
     <Drawer_nav />
-
-      <Text>H</Text>
     </View>
   )
 }

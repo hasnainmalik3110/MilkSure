@@ -1,10 +1,27 @@
 import { View, Text, StyleSheet, TouchableOpacity,Image } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Color } from '../../../themes/colors'
 import { Fonts } from '../../../themes/fonts'
 import { upload_img } from '../../../themes/images'
+import ImagePicker from 'react-native-image-crop-picker';
 
-const Home_scr = () => {
+
+
+const Home_scr = ({navigation}) => {
+
+
+
+
+  const openImagePicker = () => {
+    ImagePicker.openPicker({
+      cropping: true,
+    }).then((image) => {
+      navigation.navigate('ProcessingScreen', { selectedImage: image });
+    }).catch((error) => {
+      console.log('Error picking image:', error);
+    });
+  };
+
   return (
     <View style={styles.container}>
 
@@ -14,10 +31,14 @@ const Home_scr = () => {
       DETECTION
      </Text>
 
-    <TouchableOpacity style={styles.upload_btn}>
-    <Image source={upload_img} style={styles.upload_img}/>
+    <TouchableOpacity style={styles.upload_btn}
+   onPress={openImagePicker}
+    >
+    <Image source={upload_img} style={styles.upload_img}
+    />
     <Text style={styles.upload_txt}>DETECTION</Text>
     </TouchableOpacity>
+    
 
     </View>
   )
@@ -56,6 +77,17 @@ const styles=StyleSheet.create({
         marginVertical:"3%",
         letterSpacing:0.3,
         fontFamily:Fonts.R_Bold
-    }
+    },
+    selectedImageContainer: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: 20,
+    },
+    selectedImage: {
+      width: 200,
+      height: 200,
+      resizeMode: 'cover',
+      borderRadius: 10,
+    },
 })
 export default Home_scr
