@@ -104,7 +104,8 @@ const Signup = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:Color.bg_clr
+    backgroundColor:Color.bg_clr,
+    paddingHorizontal:"5%"
     
   },
   ml_text: {
@@ -159,18 +160,16 @@ const styles = StyleSheet.create({
   box_icon: {
     height: 20,
     width: 20,
-    marginLeft: 30,
     resizeMode: 'contain',
     tintColor: Color.primary,
   },
   check_view: {
     flexDirection: 'row',
-    marginBottom:20,
-    marginTop:15
+    marginVertical:"3%"
   },
   rm_text: {
     color: Color.BLACK,
-    paddingHorizontal: 5,
+    marginHorizontal: 5,
     fontSize: 14,
     fontFamily: Fonts.SF_Bold,
   },

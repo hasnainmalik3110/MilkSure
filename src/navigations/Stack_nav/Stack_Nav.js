@@ -6,6 +6,8 @@ import Login from "../../screens/Authentication/Login/index";
 import Signup from "../../screens/Authentication/Sign up";
 import Home from "../../screens/Home/home_screen/home";
 import Processing from "../../screens/Processing";
+import Results from "../../screens/results/results";
+
 
 const Stack=createNativeStackNavigator();
 
@@ -18,8 +20,10 @@ const StackNav=()=>{
         <Stack.Screen name="LoginScreen"     component={Login}    options={{headerShown:false}}/>
         <Stack.Screen name="HomeScreen"     component={Home}    options={{headerShown:false}}/>
         <Stack.Screen name="ProcessingScreen"     component={Processing}    options={{headerShown:false}}/>
+        <Stack.Screen name="ResultScreen"     component={Results}    options={{headerShown:false}}/>
         </Stack.Navigator>
         </NavigationContainer>
     )
 }
+
 export default StackNav

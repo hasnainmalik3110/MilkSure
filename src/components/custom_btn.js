@@ -2,15 +2,19 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
 import { Color } from '../themes/colors'
 import { Fonts } from '../themes/fonts'
+import { Image } from 'react-native-reanimated/lib/typescript/Animated'
 
-const Custom_btn = ({Style, title, ONPress}) => {
+const Custom_btn = ({WIDTH, title, ONPress,rightImage}) => {
   return (
     <View style={styles.btn}>
-      <TouchableOpacity style={[styles.container, Style]}
+      <TouchableOpacity style={[styles.container, {width:WIDTH}]}
       onPress={ONPress}
       >
+      
       <Text style={styles.txt}>{title}</Text>
+
       </TouchableOpacity>
+      
     </View>
   )
 }
@@ -25,11 +29,9 @@ const styles=StyleSheet.create({
     },
     btn:{
         backgroundColor:Color.primary,
-        height:50,
         alignSelf:'center',
         borderRadius:10,
-        marginVertical:10,
-        width:'85%',
+        width:'100%',
         height:58,
         marginVertical:20
     },
@@ -39,7 +41,7 @@ const styles=StyleSheet.create({
         fontFamily:Fonts.SF_Bold,
         fontWeight:'bold'
         
-    }
+    },
 })
 
 export default Custom_btn

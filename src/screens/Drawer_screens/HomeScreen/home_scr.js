@@ -10,8 +10,6 @@ import ImagePicker from 'react-native-image-crop-picker';
 const Home_scr = ({navigation}) => {
 
 
-
-
   const openImagePicker = () => {
     ImagePicker.openPicker({
       cropping: true,

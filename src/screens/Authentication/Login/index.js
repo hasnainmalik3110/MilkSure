@@ -51,7 +51,8 @@ const Login = ({navigation}) => {
       />
 
       <View style={styles.check_view}>
-        <TouchableOpacity onPress={CheckPassword}>
+        <View style={styles.Check_Remember}>
+      <TouchableOpacity onPress={CheckPassword}>
           {checked ? (
             <Image source={box} style={styles.box_icon} />
           ) : (
@@ -59,6 +60,7 @@ const Login = ({navigation}) => {
           )}
         </TouchableOpacity>
         <Text style={styles.rm_text}>Remember me</Text>
+        </View>
         <TouchableOpacity>
           <Text style={styles.fp_text}>Forgot Password</Text>
         </TouchableOpacity>
@@ -84,7 +86,8 @@ const Login = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:Color.bg_clr
+    backgroundColor:Color.bg_clr,
+    paddingHorizontal:'5%'
     
   },
   ml_text: {
@@ -111,7 +114,7 @@ const styles = StyleSheet.create({
   },
   email_input_view: {
     backgroundColor: '#FFFFFF',
-    width: '80%',
+    width: '100%',
     height: 50,
     alignSelf: 'center',
     flexDirection: 'row',
@@ -139,31 +142,33 @@ const styles = StyleSheet.create({
   box_icon: {
     height: 20,
     width: 20,
-    marginLeft: 30,
     resizeMode: 'contain',
     tintColor: Color.primary,
   },
   check_view: {
     flexDirection: 'row',
-    marginBottom:20,
-    marginTop:15
+    justifyContent:"space-between",
+    marginVertical:"4%"
+  },
+  Check_Remember:{
+    flexDirection:"row",
+    alignItems:"center"
   },
   rm_text: {
     color: Color.BLACK,
-    paddingHorizontal: 5,
     fontSize: 14,
     fontFamily: Fonts.SF_Bold,
+    lineHeight:18,
+    marginLeft:"4%"
   },
   fp_text: {
     color: Color.BLACK,
-    paddingHorizontal: 5,
     fontSize: 14,
     fontFamily: Fonts.SF_Bold,
-    paddingLeft: 100,
   },
   no_acc_txt:{
     color: Color.grey2,
-    paddingHorizontal: 5,
+
     fontSize: 14,
     fontFamily:Fonts.SF_Bold
 
