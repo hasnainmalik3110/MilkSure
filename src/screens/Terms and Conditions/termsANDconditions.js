@@ -5,7 +5,6 @@ import { Color } from '../../themes/colors';
 const TermsAndConditions = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Terms and Conditions</Text>
       <Text style={styles.content}>
         1. Acceptance of Terms: By accessing or using the "HPLC and Hyperspectral Imaging based Milk Adulteration Detection and Classification using Deep Learning Techniques" mobile application ("the App"), you agree to abide by these terms and conditions. If you do not agree with any part of these terms, you may not use the App.{"\n\n"}
         2. Use of the App: The App is intended for informational and educational purposes only. You agree to use the App solely for lawful purposes and in accordance with all applicable laws and regulations.{"\n\n"}

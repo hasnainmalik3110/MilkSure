@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {
   Image,
+  KeyboardAvoidingView,
   ScrollView,
   StyleSheet,
   Text,
@@ -9,7 +10,7 @@ import {
   View,
 } from 'react-native';
 import {Fonts} from '../../../themes/fonts';
-import {box, msg_icon, remember_tick} from '../../../themes/images';
+import {box, lock_icon, msg_icon, remember_tick} from '../../../themes/images';
 import {Color, Colors} from '../../../themes/colors';
 import Custom_Input from '../../../components/custom_input';
 import Custom_btn from '../../../components/custom_btn';
@@ -25,7 +26,7 @@ const Login = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView style={styles.container}>
     <ScrollView>
       <Text style={styles.ml_text}>MILK SURE</Text>
       <Text style={styles.wlcm_txt}>Welcome Back!</Text>
@@ -36,7 +37,7 @@ const Login = ({navigation}) => {
         onChangeText={txt => {
           setuserEmail(txt);
         }}
-        placeholder="Enter Email"
+        placeholder="abcd123456789@Kfeit.edu.pk"
         leftImage={msg_icon}
       />
 
@@ -45,9 +46,10 @@ const Login = ({navigation}) => {
         onChangeText={txt => {
           setpassword(txt);
         }}
-        placeholder="Enter password"
-        leftImage={msg_icon}
+        placeholder="Password"
+        leftImage={lock_icon}
         rightImage={msg_icon}
+        secureTextEntry={true}
       />
 
       <View style={styles.check_view}>
@@ -71,15 +73,15 @@ const Login = ({navigation}) => {
 
       <View style={styles.reg_view}>
       <Text style={styles.no_acc_txt}>If you have no account!  please</Text>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=>navigation.navigate('Sign_upScreen')}>
       <Text style={styles.reg_txt}>REGISTER</Text>
       </TouchableOpacity>
       </View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=>navigation.navigate('HomeScreen')}>
       <Text style={styles.guest_txt}>continue as guest</Text>
       </TouchableOpacity>
       </ScrollView>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
@@ -95,18 +97,18 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.R_Black,
     color: 'black',
     fontSize: 36,
-    paddingTop: 98,
+    paddingTop: '22%',
   },
   wlcm_txt: {
     alignSelf: 'center',
-    paddingTop: 70,
+    paddingTop: '8%',
     fontFamily: Fonts.R_Bold,
     color: 'red',
     fontSize: 22,
   },
   signIn_txt: {
     alignSelf: 'center',
-    paddingTop: 3,
+    paddingTop: 1,
     paddingBottom: 35,
     fontFamily: Fonts.R_Bold,
     color: 'black',
@@ -148,7 +150,8 @@ const styles = StyleSheet.create({
   check_view: {
     flexDirection: 'row',
     justifyContent:"space-between",
-    marginVertical:"4%"
+    marginTop:"4%",
+    marginBottom:'15%'
   },
   Check_Remember:{
     flexDirection:"row",

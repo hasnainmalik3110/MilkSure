@@ -21,7 +21,7 @@ const CustomDrawerContent = ({ props, navigation }) => {
           <TouchableOpacity
             style={styles.drawer_icon_btn}
             onPress={() => navigation.closeDrawer()}>
-            <Image source={drawer_icon} style={styles.drawer_icon_} />
+            <Image source={drawer_icon} style={styles.drawer_icon} />
           </TouchableOpacity>
 
           <View style={styles.profile_pic_view}>
@@ -135,6 +135,17 @@ const styles = StyleSheet.create({
   },
   drawer_cont: {
     backgroundColor: Color.primary,
+    top:'-1%'
+  },
+  drawer_icon_btn: {
+    top: '100%',
+    left: '8%',
+  },
+  drawer_icon:{
+    width: 30,
+    height: 30,
+    resizeMode:'contain'
+
   },
   active_btn: {
     backgroundColor: Color.primary,
@@ -166,10 +177,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     tintColor: Color.primary,
   },
-  drawer_icon_btn: {
-    top: '100%',
-    left: '8%',
-  },
+  
   profile_pic: {
     width: 100,
     height: 100,
@@ -189,6 +197,7 @@ const styles = StyleSheet.create({
     top: '230%',
     right: '100%',
   },
+
   name: {
     fontFamily: Fonts.SF_Bold,
     fontWeight: 'bold',
@@ -196,7 +205,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
     fontSize: 18,
     top: '10%',
-    right: '10%',
+    right: '15%',
     padding: 5,
   },
   email: {
@@ -206,7 +215,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
     fontSize: 15,
     top: '10%',
-    right: '10%',
+    right: '15%',
     padding: 3,
     textDecorationLine: 'underline',
   },

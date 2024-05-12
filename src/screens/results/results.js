@@ -1,14 +1,22 @@
 import { View, Text, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import { Color } from '../../themes/colors'
-import { spam_icon } from '../../themes/images'
+import { Back, spam_icon } from '../../themes/images'
+import Header from '../../components/header'
 
 
 
 
-const Results = () => {
+const Results = ({navigation}) => {
   return (
+<View style={styles.app_cont}>
+    <Header
+    title="result"
+    source={Back}
+    ONPRESS={()=>navigation.goBack()}
+    />
     <View style={styles.container}>
+    
     <View style={styles.box}>
       
     <View style={styles.protect_mailk}>
@@ -20,9 +28,13 @@ const Results = () => {
       
     
     </View>
+    </View>
   )
 }
 const styles = StyleSheet.create({
+  app_cont:{
+    flex:1
+  },
     container: {
       flex: 1,
       justifyContent: 'center',

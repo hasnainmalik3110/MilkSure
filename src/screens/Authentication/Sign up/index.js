@@ -1,134 +1,142 @@
-import React, {useState} from 'react';
-import {
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import {Fonts} from '../../../themes/fonts';
-import {box, msg_icon, remember_tick} from '../../../themes/images';
-import {Color, Colors} from '../../../themes/colors';
+// Signup.js
+import React, { useState } from 'react';
+import { ImageBackground, ScrollView, StyleSheet, Text, View, TouchableOpacity, Image, KeyboardAvoidingView } from 'react-native';
+import { bg_img, box, check_box, hidden_eye, lock_icon, msg_icon, profile_icon, remember_tick } from '../../../themes/images';
+import { Color } from '../../../themes/colors';
 import Custom_Input from '../../../components/custom_input';
 import Custom_btn from '../../../components/custom_btn';
+import { Fonts } from '../../../themes/fonts';
 
-const Signup = ({navigation}) => {
+const Signup = ({ navigation }) => {
+    const [name, setname] = useState('');
+    const [email, setemail] = useState('');
 
-  const [userEmail, setuserEmail] = useState('');
-  const [password, setpassword] = useState('');
-  const [checked, setchecked] = useState(true);
+    const [password, setpassword] = useState('');
+    const [confirmPassword, setconfirmPassword] = useState('');
+    const [checked, setchecked] = useState(true);
 
-  const CheckPassword = () => {
-    setchecked(!checked);
-  };
+    const CheckPassword = () => {
+        setchecked(!checked);
+    };
 
-  return (
-    <View style={styles.container}>
-    <ScrollView>
-      <Text style={styles.ml_text}>MILK SURE</Text>
-      <Text style={styles.wlcm_txt}>Welcome Back!</Text>
-      <Text style={styles.signIn_txt}>Sign up to your account</Text>
+    return (
+        <KeyboardAvoidingView style={styles.container}>
+            
+                <ScrollView>
+                    <Text style={styles.ml_text}>MILK SURE</Text>
+                    <Text style={styles.wlcm_txt}>Welcome Back!</Text>
+                    <Text style={styles.signIn_txt}>Sign up to continue</Text>
 
-      <Custom_Input
-        value={userEmail}
-        onChangeText={txt => {
-          setuserEmail(txt);
-        }}
-        placeholder="Enter Email"
-        leftImage={msg_icon}
-      />
+                    <Custom_Input
+                        value={name}
+                        onChangeText={txt => {
+                            setname(txt);
+                        }}
+                        placeholder="Name"
+                        leftImage={profile_icon}
+                    />
 
-      <Custom_Input
-        value={password}
-        onChangeText={txt => {
-          setpassword(txt);
-        }}
-        placeholder="Enter password"
-        leftImage={msg_icon}
-        rightImage={msg_icon}
-      />
+                    <Custom_Input
+                        value={email}
+                        onChangeText={txt => {
+                            setemail(txt);
+                        }}
+                        placeholder="abcd123456789@Kfeit.edu.pk"
+                        leftImage={msg_icon}
+                    />
 
-      <Custom_Input
-        value={password}
-        onChangeText={txt => {
-          setpassword(txt);
-        }}
-        placeholder="Enter password"
-        leftImage={msg_icon}
-        rightImage={msg_icon}
-      />
+                    <Custom_Input
+                        value={password}
+                        onChangeText={txt => {
+                            setpassword(txt);
+                        }}
+                        placeholder="Password"
+                        leftImage={lock_icon}
+                        rightImage={msg_icon}
+                        secureTextEntry={true}
+                    />
 
-      <Custom_Input
-        value={password}
-        onChangeText={txt => {
-          setpassword(txt);
-        }}
-        placeholder="Enter password"
-        leftImage={msg_icon}
-        rightImage={msg_icon}
-      />
+                    <Custom_Input
+                        value={confirmPassword}
+                        onChangeText={txt => {
+                            setconfirmPassword(txt);
+                        }}
+                        placeholder="confirm Password"
+                        leftImage={lock_icon}
+                        rightImage={hidden_eye}
+                        secureTextEntry={true}
+                    />
 
-      <View style={styles.check_view}>
-        <TouchableOpacity onPress={CheckPassword}>
-          {checked ? (
-            <Image source={box} style={styles.box_icon} />
-          ) : (
-            <Image source={remember_tick} style={styles.box_icon} />
-          )}
-        </TouchableOpacity>
-        <Text style={styles.rm_text}>I Agree to the Bobi's</Text>
-        <TouchableOpacity>
-          <Text style={styles.fp_text}>Term & Conditions</Text>
-        </TouchableOpacity>
-      </View>
-      <Custom_btn title="sign In" 
-      ONPress={()=>navigation.navigate('LoginScreen')}
-      />
+                    <View style={styles.check_view}>
+                        <TouchableOpacity onPress={CheckPassword}>
+                      
+                            {checked ? (
+                                <Image source={box} style={styles.box_icon} />
+                            ) : (
+                                <Image source={check_box} style={styles.box_icon} />
+                            )}
+                        </TouchableOpacity>
+                        <Text style={styles.rm_text}>I Agree to the MilkSure's</Text>
+                          
+                        <TouchableOpacity>
+                            <Text style={styles.fp_text}>Term & Conditions</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <Custom_btn
+                        title="sign up"
+                        ONPress={() => navigation.navigate('LoginScreen')}
+                    />
 
-      <View style={styles.reg_view}>
-      <Text style={styles.no_acc_txt}>If you have no account!  please</Text>
-      <TouchableOpacity>
-      <Text style={styles.reg_txt}>REGISTER</Text>
-      </TouchableOpacity>
-      </View>
-      <TouchableOpacity>
-      <Text style={styles.guest_txt}>Already have an account?</Text>
-      </TouchableOpacity>
-      </ScrollView>
-    </View>
-  );
+                   
+                    <TouchableOpacity style={styles.guest_view} onPress={()=>navigation.navigate('LoginScreen')}>
+                        <Text style={styles.guest_txt}>Already have an account?</Text>
+                    </TouchableOpacity>
+                </ScrollView>
+           
+        </KeyboardAvoidingView>
+    );
 };
+
+
+
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor:Color.bg_clr,
-    paddingHorizontal:"5%"
+    paddingHorizontal:"5%",
+    
+    
+  },
+  bg_img: {
+    justifyContent:"flex-end",
+    resizeMode:'cover',
+    
+    
     
   },
   ml_text: {
     alignSelf: 'center',
     fontFamily: Fonts.R_Black,
     color: 'black',
-    fontSize: 36,
-    paddingTop: 78,
+    fontSize: 30,
+    paddingTop: '22%',
   },
   wlcm_txt: {
     alignSelf: 'center',
-    paddingTop: 50,
+    paddingTop: '8%',
     fontFamily: Fonts.R_Bold,
     color: 'red',
-    fontSize: 22,
+    fontSize: 18,
   },
   signIn_txt: {
     alignSelf: 'center',
-    paddingTop: 3,
+    paddingTop: 1,
     paddingBottom: 35,
     fontFamily: Fonts.R_Bold,
     color: 'black',
-    fontSize: 18,
+    fontSize: 16,
   },
   email_input_view: {
     backgroundColor: '#FFFFFF',
@@ -136,7 +144,7 @@ const styles = StyleSheet.create({
     height: 50,
     alignSelf: 'center',
     flexDirection: 'row',
-    marginTop: 20,
+    marginTop: '8%',
     alignItems: 'center',
     borderRadius: 10,
   },
@@ -165,7 +173,8 @@ const styles = StyleSheet.create({
   },
   check_view: {
     flexDirection: 'row',
-    marginVertical:"3%"
+    marginTop:"3%",
+    marginBottom:'15%'
   },
   rm_text: {
     color: Color.BLACK,
@@ -189,23 +198,27 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 10,
     fontFamily:Fonts.SF_Bold,
     fontWeight:'bold'
   },
   reg_txt:{
     color: Color.primary,
-    textDecorationLine:'underline'
+    textDecorationLine:'underline',
+    fontSize: 14,
+    lineHeight:16
   },
   guest_txt:{
     color: Color.BLACK,
     alignSelf:'center',
-    marginVertical:50,
     fontWeight:'bold',
     fontSize:16,
+    lineHeight:18,
     letterSpacing:1,
-    fontFamily:Fonts.SF_Bold
-  }
+    fontFamily:Fonts.SF_Bold,
+  },
+  guest_view:{
+    marginVertical:'13%',
+  },
 
 });
 

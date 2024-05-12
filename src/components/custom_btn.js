@@ -4,7 +4,7 @@ import { Color } from '../themes/colors'
 import { Fonts } from '../themes/fonts'
 import { Image } from 'react-native-reanimated/lib/typescript/Animated'
 
-const Custom_btn = ({WIDTH, title, ONPress,rightImage}) => {
+const Custom_btn = ({WIDTH, title, ONPress}) => {
   return (
     <View style={styles.btn}>
       <TouchableOpacity style={[styles.container, {width:WIDTH}]}
