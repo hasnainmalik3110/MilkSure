@@ -19,6 +19,8 @@ const Signup = ({ navigation }) => {
         setchecked(!checked);
     };
 
+   
+
     return (
         <KeyboardAvoidingView style={styles.container}>
             

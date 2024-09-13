@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity,Image } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity,Image,PermissionsAndroid } from 'react-native'
 import React, { useState } from 'react'
 import { Color } from '../../../themes/colors'
 import { Fonts } from '../../../themes/fonts'
@@ -10,6 +10,29 @@ import ImagePicker from 'react-native-image-crop-picker';
 const Home_scr = ({navigation}) => {
 
 
+  const requestCameraPermission = async () => {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.CAMERA,
+        {
+          title: 'Cool Photo App Camera Permission',
+          message:
+            'Cool Photo App needs access to your camera ' +
+            'so you can take awesome pictures.',
+          buttonNeutral: 'Ask Me Later',
+          buttonNegative: 'Cancel',
+          buttonPositive: 'OK',
+        },
+      );
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        console.log('You can use the camera');
+      } else {
+        console.log('Camera permission denied');
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  };
   const openImagePicker = () => {
     ImagePicker.openPicker({
       cropping: true,
@@ -30,7 +53,7 @@ const Home_scr = ({navigation}) => {
      </Text>
 
     <TouchableOpacity style={styles.upload_btn}
-   onPress={openImagePicker}
+   onPress={requestCameraPermission}
     >
     <Image source={upload_img} style={styles.upload_img}
     />
@@ -89,3 +112,4 @@ const styles=StyleSheet.create({
     },
 })
 export default Home_scr
+

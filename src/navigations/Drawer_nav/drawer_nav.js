@@ -7,7 +7,7 @@ import TermsAndConditions from '../../screens/Terms and Conditions/termsANDcondi
 import { Color } from '../../themes/colors'
 import Contacts from '../../screens/contacts'
 import EditProfile from '../../screens/Edit Profile/edit_profile'
-import { NavigationContainer } from '@react-navigation/native'
+
  
 const Drawer = createDrawerNavigator()
 

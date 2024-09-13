@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "574665300841",
+    "project_id": "milksure-9a0b3",
+    "storage_bucket": "milksure-9a0b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574665300841:android:df8eaf33ffc28f81b93bf8",
+        "android_client_info": {
+          "package_name": "com.milksure"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA__iZ_Tk8NBpXeCEQ-XII6FPF_LWsP08"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

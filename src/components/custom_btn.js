@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react'
 import { Color } from '../themes/colors'
 import { Fonts } from '../themes/fonts'
-import { Image } from 'react-native-reanimated/lib/typescript/Animated'
+
 
 const Custom_btn = ({WIDTH, title, ONPress}) => {
   return (
