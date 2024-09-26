@@ -53,7 +53,7 @@ const Home_scr = ({navigation}) => {
      </Text>
 
     <TouchableOpacity style={styles.upload_btn}
-   onPress={requestCameraPermission}
+   onPress={openImagePicker}
     >
     <Image source={upload_img} style={styles.upload_img}
     />
