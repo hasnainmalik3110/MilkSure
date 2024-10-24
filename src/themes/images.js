@@ -4,6 +4,8 @@ export const upload_img=require(Img_Path+'arrow_upload.png')
 export const profile_img=require(Img_Path+'profile_pic.png')
 export const imranKhan=require(Img_Path+'imran_khan.png')
 export const bg_img=require(Img_Path+'bg-img.png')
+export const pure=require(Img_Path+'pure.gif')
+export const adultrated=require(Img_Path+'adultrated.gif')
 
 
 
