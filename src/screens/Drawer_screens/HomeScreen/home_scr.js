@@ -46,14 +46,14 @@ const Home_scr = () => {
 
   const uploadAndPredict = async () => {
     if (!fileUri || rowIndex === '') {
-      Alert.alert('Error', 'Please upload a CSV file and provide a row index.');
+      Alert.alert('Error', 'Please upload a CSV file or provide a row index.');
       return;
     }
 
     try {
       const response = await RNFetchBlob.fetch(
         'POST',
-        'http://192.168.182.30:5000/upload', // Replace with your local Flask server IP
+        'http://192.168.74.31:5000/upload', // Replace with your local Flask server IP
         {
           'Content-Type': 'multipart/form-data',
         },

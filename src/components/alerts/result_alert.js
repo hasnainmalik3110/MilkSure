@@ -6,7 +6,7 @@ import {  adultrated, pure } from '../../themes/images';
 
 const ResultAlert = ({ visible, result, onClose }) => {
   const getImage = () => {
-    return result === 'Adulterated Milk' ? adultrated : pure; // Show the appropriate image
+    return result === 'Adulterated Milk' ? adultrated : pure; 
   };
 
   return (
@@ -16,7 +16,7 @@ const ResultAlert = ({ visible, result, onClose }) => {
           <FastImage
             source={getImage()}
             style={styles.logo}
-            resizeMode={FastImage.resizeMode.contain} // Ensures the image is scaled properly
+            resizeMode={FastImage.resizeMode.contain} 
           />
           <Text style={styles.resultTxt}>
             {result === 'Adulterated Milk' ? 'Milk is Adulterated!' : 'Milk is Pure!'}
