@@ -6,6 +6,7 @@ export const imranKhan=require(Img_Path+'imran_khan.png')
 export const bg_img=require(Img_Path+'bg-img.png')
 export const pure=require(Img_Path+'pure.gif')
 export const adultrated=require(Img_Path+'adultrated.gif')
+export const logo=require(Img_Path+'FYPLOGO.png')
 
 
 

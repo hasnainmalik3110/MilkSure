@@ -1,11 +1,11 @@
 import { StyleSheet } from "react-native"
 import { Fonts } from '../../../themes/fonts'
+import { Color } from "../../../themes/colors"
 export const styles = StyleSheet.create({
     container:{
         flex:1,
         padding: 3,
-        backgroundColor:'white',
-        
+        backgroundColor:Color.bg_clr,
     },
     img:{
         alignSelf:'center',
@@ -15,17 +15,31 @@ export const styles = StyleSheet.create({
     },
     ml_txt:{
         fontSize:36,
-        fontFamily:Fonts.R_Bold,
+        fontFamily:Fonts.L_Regular,
+        fontWeight:'bold',
         color:'red',
         alignSelf:'center',
-        paddingTop:200,
+        marginVertical:5,
     },
     adlt_txt:{
         fontSize:20,
         fontFamily:Fonts.R_Black,
         color: 'black',
+        alignSelf:'center',  
+    },
+    logo:{
+        height: 70,
+        width: 70,
+        marginTop:'60%',
         alignSelf:'center',
-        paddingTop:10
-        
+        resizeMode:'contain'
+    },
+    bg_image:{
+        height: '60%',
+        width: '100%',
+        position:'absolute',
+        bottom:'0%',
+        alignSelf:'center',
+        zIndex:-1
     }
 })

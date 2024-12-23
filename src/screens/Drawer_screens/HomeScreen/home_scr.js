@@ -10,7 +10,6 @@ import Custom_btn from '../../../components/custom_btn';
 import ResultAlert from '../../../components/alerts/result_alert';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 
-
 const Home_scr = () => {
   const [alertVisible, setAlertVisible] = useState(false);
   const [fileUri, setFileUri] = useState(null);
@@ -29,7 +28,6 @@ const Home_scr = () => {
       const name = file[0].name;
       const destPath = `${RNFS.TemporaryDirectoryPath}/${name}`;
 
-      // Copy the selected file to the temp directory
       await RNFS.copyFile(uri, destPath);
       console.log('Temporary file path:', destPath);
 
@@ -53,7 +51,7 @@ const Home_scr = () => {
     try {
       const response = await RNFetchBlob.fetch(
         'POST',
-        'http://192.168.74.31:5000/upload', // Replace with your local Flask server IP
+        'http://192.168.28.31:5000/upload', // Replace with your local Flask server IP
         {
           'Content-Type': 'multipart/form-data',
         },
@@ -68,20 +66,18 @@ const Home_scr = () => {
       if (result.error) {
         Alert.alert('Error', result.error);
       } else {
-        setMilkResult(result.result); // Set the result ('Adulterated' or 'Pure')
+        setMilkResult(result.result); 
         setAlertVisible(true);
-        console.log(result); // Show the alert
+        console.log(result); 
       }
     } catch (err) {
       console.log('Error uploading file:', err);
       Alert.alert('Error', 'Something went wrong while uploading the file.');
     }
   };
-
   const hideAlert = () => {
     setAlertVisible(false);
   };
-
   return (
     <View style={styles.container}>
       <ScrollView>
