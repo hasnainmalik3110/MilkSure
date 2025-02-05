@@ -51,7 +51,7 @@ const Home_scr = () => {
     try {
       const response = await RNFetchBlob.fetch(
         'POST',
-        'http://192.168.28.31:5000/upload', // Replace with your local Flask server IP
+        'http://192.168.28.30:5000/upload', // Replace with your local Flask server IP
         {
           'Content-Type': 'multipart/form-data',
         },
